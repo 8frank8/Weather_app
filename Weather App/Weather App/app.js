@@ -2,7 +2,7 @@
 
  
 
- const weather_app = {
+const weather_app = {
   
  getSearchBar: () => {
     document.querySelector('.search').addEventListener('click', weather_app.fetchWeather );
@@ -49,14 +49,15 @@
     let description = data.weather[0].description;
     let wind_speed = data.wind.speed;
     let humid = data.main.humidity;
-
-
+    let lat = data.coord.lat;
+    let lon = data.coord.lon;
+    const myLatnLon= {lat:lat, lng:lon};
     let html = `
      <div class="col">
      <h4 class="current-time">${time}</h4>
      <br>
      <h1 id="location">${city}</h1>
-     <img src="http://openweathermap.org/img/wn/${icon}.png" alt="" class="icon">
+     <img src="http://openweathermap.org/img/wn/${icon}@4x.png" alt="" class="icon">
      <div class="temp-container">
         <p class="min-temp">Minimum Temperature:${min_temp}</p>
          <p class="curren-temp">Current Temperature:${current_temp}</p>
@@ -71,10 +72,42 @@
  </div>
      `
      display.innerHTML = html;
-  }
-   
+  
+     map = new google.maps.Map(document.getElementById("map"), {
+      center: { lat: lat, lng:lon },
+      zoom: 11,
+    }
+    )
+    // let image = `http://openweathermap.org/img/wn/${icon}@4x.png`
+    new google.maps.Marker({
+      position: myLatnLon,
+      map,
+      // icon:image,
+    });
+   }
+  
+  // initmap:(data) => {
+  //   let lat = data.coord.lat;
+  //   let lon = data.coord.lon;
+  //   const myLatnLon= {lat:lat, lng:lon};
 
-
+  //   map = new google.maps.Map(document.getElementById("map"), {
+  //     center: { lat: lat, lng:lon },
+  //     zoom: 10,
+  //   }
+  //   )
+  //   new google.maps.Marker({
+  //     position: myLatnLon,
+  //     map,
+  //     title: "Hello World!",
+  //   });
+  // }
 };
+
+
+
+
+
+
 
   weather_app.getSearchBar();
