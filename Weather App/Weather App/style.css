@@ -1,9 +1,7 @@
-.sch-container{
-    display: block;
-    margin: 0 auto;
-  
-}
 
+/* *{
+    background-color: #ffcc00; */
+/* } */
 .container{
  
     margin: 20px;
@@ -12,19 +10,40 @@
 input{
 
     margin: 0 auto;
-  width: 50%;
+  width: 15%;
   height: 45px;
   padding: 0 20px;
   font-size: 1rem;
-  border: 1px solid #D0CFCE;
+  border: 1px solid black;
   outline: none;
+ border-radius: 15px;
 
-    /* &::-webkit-input-placeholder{
-      transition: opacity 0.45s ease; 
-  	  opacity: 0; */
+  
 }
 input:focus{
-    border: 1px solid #008ABF;
+    border: 1px solid #ffcc00;
     transition: 0.35s ease;
-    color: #008ABF; 
+    color: #4D4933; 
+    background-color: #e1dfd2;
 }
+.row{
+    display: flex;
+    justify-content: center;
+}
+.col{
+    border: 5px solid black;
+    border-radius: 15px;
+    width: 25%;
+    min-width: 400px;
+    box-shadow:wheat 20px;
+}
+
+#map {
+    padding-left: 500px;
+    display: block;
+    height: 500px;
+    width: 60%;
+    justify-content: center;
+    margin-bottom: 400px;
+}
+  
