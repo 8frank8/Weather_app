@@ -6,6 +6,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
+
+  
     <title>Document</title>
 </head>
 
@@ -17,22 +19,39 @@
     <div class="outside-search-container">
         <div class="sch-container">
             <div class="container">
-                <label for="longitude">city:</label>
+                <label for="longitude"></label>
                 <input type="text" placeholder="Enter a city" class="searchBar long" name="longitude" >
 
-            </div>
             <!-- <div class="container">
            
                 <label  for="Latitude">Latitude:</label>
                  <input type="text" placeholder="Enter Latitude" class="searchBar lat" name="Latitude" class="bar">
-             
+             https://github.com/maps-for-work-samples/tree/master/samples/OpenWeatherMapLayer
                 </div> -->
                 <div class="container">
+
             <button class="search" type="button">Search</button>
                 </div>
         </div>
       
     </div>
+
+    <div class="display-container row">
+       
+    </div>
+    <div id="map"></div>
+
+    
+
+</body>
+<script
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBOvgdxJycWV3cCEsQ1eP-I5b2l_7gkMUY&callback=initMap&v=weekly"
+    
+    ></script>
+<script src="app.js"></script>
+<script src="map.js"></script>
+
+</html>
 
     <div class="display-container row">
        
