@@ -1,0 +1,62 @@
+.min_temp::before{
+    content: url(/icons/png/001-low-temperature.png) ;
+}
+.min_temp:hover:before{
+    content: url(/icons/png/003-low-temperature-1.png) ;
+}
+/*  */
+.max_temp::before{
+    content: url(/icons/png/002-high-temperature.png) ;
+}
+.max_temp:hover:before{
+    content: url(/icons/png/004-high-temperature-1.png) ;
+}
+/*  */
+.wind_dir::before{
+    content: url(/icons/png/006-storm-1.png) ;
+}
+.wind_dir:hover:before{
+    content: url(/icons/png/005-storm.png) ;
+}
+/*  */
+.max_temp::before{
+    content: url(/icons/png/002-high-temperature.png) ;
+}
+.max_temp:hover:before{
+    content: url(/icons/png/004-high-temperature-1.png) ;
+}
+/*  */
+.wind_spd::before{
+    content: url(/icons/png/016-wind-1.png) ;
+}
+.wind_spd:hover:before{
+    content: url(/icons/png/015-wind.png) ;
+}
+/*  */
+.humid::before{
+    content: url(/icons/png/014-humidity-1.png) ;
+}
+.humid:hover:before{
+    content: url(/icons/png/013-humidity.png) ;
+}
+/*  */
+.sunrise::before{
+    content: url(/icons/png/010-sunrise-1.png) ;
+}
+.sunrise:hover:before{
+    content: url(/icons/png/009-sunrise.png) ;
+}
+/*  */
+.sunset::before{
+    content: url(/icons/png/012-sunset-1.png) ;
+}
+.sunset:hover:before{
+    content: url(/icons/png/011-sunset.png) ;
+}
+/*  */
+.cloudy::before{
+    content: url(/icons/png/008-cloudy-day-1.png) ;
+}
+.cloudy:hover:before{
+    content: url(/icons/png/007-cloudy-day.png) ;
+}
