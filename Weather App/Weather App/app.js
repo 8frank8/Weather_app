@@ -52,7 +52,13 @@
     let lon = data.coord.lon;
     let wind_direction = data.wind.deg;
    let cloudiness = data.clouds.all;
-
+   let country = data.sys.country;
+   let sunrise = new Date(data.sys.sunrise * 1000)
+   let new_sunrise = sunrise.toLocaleString('en-GB', { hour:'numeric', minute:'numeric', hour12:true } );
+   let sunset = new Date(data.sys.sunset * 1000)
+   let new_sunset = sunset.toLocaleString('en-GB', { hour:'numeric', minute:'numeric', hour12:true } );
+  
+  
  
     const myLatnLon= {lat:lat, lng:lon};
     let html = `
@@ -60,28 +66,39 @@
     <div class = "title">
         <div class ="location">
     <p class="current-time">${time}</p>
-    <p id="location">${city}</p>
+    <p id="location">${city},${country}</p>
 </div>
 
     <div class = "img_container">
     <img src="http://openweathermap.org/img/wn/${icon}@4x.png" alt="icon" class="icon">
     <div class = "temp_cont">
-    <p class = "temp">${Math.round(current_temp)}</p>
+    <p class = "temp">${Math.round(current_temp)} &#8457</p>
     </div>
     </div>
     </div>
     <div class="description_container">
         <!-- description, feels like and windspeed -->
-        <p> Today feels like ${Math.round(feel_temp)} outside with ${description} </p>
+        <p> Today feels like ${Math.round(feel_temp)}&#8457 outside with ${description} </p>
     </div>
    
-  <ul>
-      <li class="li_item">Minimum Temperature:${Math.round(min_temp)}</li>
-      <li class="li_item"">Maximum Temperature:${Math.round(max_temp)}</li>
-      <li class="li_item"">${wind_direction} and  ${Math.round(wind_speed)}  </li>
-      <li class="li_item"">Humidity: ${Math.round(humid)}</li>
-      <li class="li_item"">Cloudiness: ${Math.round(cloudiness)}</li>  
-    </ul>
+    <ul>
+    <li class="min_temp ">Minimum Temperature:${Math.round(min_temp)}&#8457</li>
+
+
+    <li class="max_temp">Maximum Temperature:${Math.round(max_temp)}&#8457<li>
+
+    <li class="wind_dir">Wind Direction:${wind_direction}&#176;</li> 
+
+    <li class="wind_spd">Wind Speed: ${Math.round(wind_speed)} mph</li> 
+
+    <li class="humid">Humidity: ${Math.round(humid)}%</li>
+
+    <li class="cloudy">Cloudiness: ${Math.round(cloudiness)}%</li>  
+
+    <li class="sunrise">Sunrise:${new_sunrise}</li>
+
+    <li class="sunset">Sunset:${new_sunset}</li>
+  </ul>
     <div id="windy"></div>
 
 </div>
@@ -102,6 +119,7 @@
       lat: lat,
       lon: lon,
       numDirection: true,
+      className: 'popup'
      }
   
   // Initialize Windy API
@@ -114,7 +132,7 @@
     
       L.popup()
           .setLatLng([lat, lon])
-          .setContent(`${current_temp} ${city}`)
+          .setContent(`${Math.round(current_temp)} &#8457 ${city}`)
           .openOn(map)
         
   });
@@ -134,4 +152,3 @@
 
 
   weather_app.getSearchBar();
-
